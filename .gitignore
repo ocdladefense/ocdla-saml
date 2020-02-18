@@ -1,0 +1,13 @@
+
+
+# Ignore config, metadata
+
+config/*
+metadata/*
+
+# Ignore Vendor
+vendor/
+
+cert/*.crt
+
+log/*.log
