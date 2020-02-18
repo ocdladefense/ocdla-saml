@@ -85,20 +85,11 @@ class SimpleSAML_Auth_Simple {
 	/**
 	 * Require the user to be authenticated.
 	 *
-	 * If the user is authenticated, this function returns immediately.
-	 *
-	 * If the user isn't authenticated, this function will authenticate the
-	 * user with the authentication source, and then return the user to the
-	 * current page.
-	 *
-	 * This function accepts an array $params, which controls some parts of
-	 * the authentication. See the login()-function for a description.
+	 * Copy of ->requireAuth, above; modified to take a loaded $session object.
 	 *
 	 * @param array $params  Various options to the authentication request.
 	 */
 	public function requireAuth2($session,$params=array()) {
-
-		// $session = SimpleSAML_Session::getSession($sessionId);
 
 		if ($session->isValid($this->authSource)) {
 			/* Already authenticated. */
