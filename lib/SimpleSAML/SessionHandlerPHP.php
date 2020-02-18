@@ -147,9 +147,12 @@ class SimpleSAML_SessionHandlerPHP extends SimpleSAML_SessionHandler {
 	public function loadSession($sessionId = NULL) {
 		assert('is_string($sessionId) || is_null($sessionId)');
 
+
+		// var_dump($_SESSION);
+		
 		if ($sessionId !== NULL) {
 			if (session_id() === '') {
-				/* session not initiated with getCookieSessionId(), start session without setting cookie */
+				// session not initiated with getCookieSessionId(), start session without setting cookie
 				$ret = ini_set('session.use_cookies', '0');
 				if ($ret === FALSE) {
 					throw new SimpleSAML_Error_Exception('Disabling PHP option session.use_cookies failed.');
@@ -163,6 +166,7 @@ class SimpleSAML_SessionHandlerPHP extends SimpleSAML_SessionHandler {
 		} elseif (session_id() === '') {
 			$sessionId = self::getCookieSessionId();
 		}
+		
 
 		if (!isset($_SESSION['SimpleSAMLphp_SESSION'])) {
 			return NULL;

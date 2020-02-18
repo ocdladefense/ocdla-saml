@@ -1,13 +1,16 @@
 
-
-# Ignore config, metadata
-
+# Ignore config files
 config/*
+
+# Ignore metadata files
 metadata/*
 
-# Ignore Vendor
+
+# Ignore vendor
 vendor/
 
+
 cert/*.crt
+
 
 log/*.log

@@ -1,0 +1,12 @@
+DirectoryIndex index.php
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine Off
+    # RewriteBase "/sso/" #apparently this is not needed
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always edit Set-Cookie (.*) "$1; SameSite=None; Secure"
+	Header onsuccess edit Set-Cookie (.*) "$1; SameSite=None; Secure"
+</IfModule>

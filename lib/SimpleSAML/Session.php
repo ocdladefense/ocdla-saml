@@ -1103,6 +1103,7 @@ class SimpleSAML_Session {
 
 		$session = $sh->loadSession($sessionId);
 		if($session === NULL) {
+			// throw new \Exception("THE SESSION FOR {$sessionId} IS NULL."); @jbernal
 			return NULL;
 		}
 
